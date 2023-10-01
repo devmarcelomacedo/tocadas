@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Minhas Canções</title>
+
+</head>
+<body>
+    <audio id="audio" preload="auto" tabindex="0" controls="">
+        <source src="Captures/Aerosmith   Crazy (Official Music Video.mp3">
+    </audio>
+    <ul id="playlist">
+     <li class="active"><a href="Captures/Aerosmith   Crazy (Official Music Video.mp3" target="_blank">Crazy</a></li>
+     <li><a href="Captures/Air Supply   Making Love Out Of Nothing At Al.mp3" target="_blank">Making Love Out Of Nothing</a></li>
+     <li><a href="Captures/Captures/Air Supply Lonely Is The Nigh.mp3" target="_blank">Lonely Is The Nigh</a></li>
+     <li><a href="Captures/All Out Of Love (Digitally Remastered 1999.mp3" target="_blank">All Out Of Love</a></li>
+     <li><a href="Captures/Alphaville   Forever Young (Official Music Video.mp3" target="_blank">Forever Young</a></li>
+     <li><a href="Captures/Armageddon • I Do.mp3" target="_blank">I Do</a></li>
+     <li><a href="Captures/Bon Jovi   Bed Of Roses (Official Music Video.mp3" target="_blank">Bed Of Roses </a></li>
+     <li><a href="Captures/Bryan Adams   Heave.mp3" target="_blank">Heave</a></li>
+     <li><a href="Captures/Bryan Adams   Straight From The Heart   Live in Lisbon 200.mp3" target="_blank">Straight From The Heart</a></li>
+     <li><a href="Captures/CAPITAL INICIAL   TUDO QUE VAI   ACÚSTICO MT.mp3" target="_blank">TUDO QUE VAI </a></li>
+     <li><a href="Captures/Eagles   Hotel California (Live 1977) (Official Video) [HD.mp3" target="_blank"> Hotel California</a></li>
+     <li><a href="Captures/Elton John   Skyline Pigeo.mp3" target="_blank">Skyline</a></li>
+     <li><a href="Captures/Empty Garden (Hey Hey Johnny.mp3" target="_blank">Empty Garden</a></li>
+     <li><a href="Captures/Europe   Carrie (Official Video.mp3" target="_blank">Carrie</a></li>
+     <li><a href="Captures/Gary Barlow   Back For Good ft JL.mp3" target="_blank">Back For Good</a></li>
+     <li><a href="Captures/Guns.mp3" target="_blank">Guns</a></li>
+     <li><a href="Captures/Jon Bon Jovi   Blaze Of Glory (Official Music Video.mp3" target="_blank">Blaze Of Glory</a></li>
+     <li><a href="Captures/Metallica Nothing Else Matters (Official Music Video.mp3" target="_blank">Nothing Else Matters</a></li>
+     <li><a href="Captures/nazareth love hurts (1976.mp3" target="_blank">love hurts</a></li>
+     <li><a href="Captures/Oasis   Do.mp3" target="_blank">Do</a></li>
+     <li><a href="Captures/Richard Marx   Right Here Waiting (Official Music Video.mp3" target="_blank">Right Here Waiting</a></li>
+     <li><a href="Captures/Roxette   It Must Have Been Love (Official Music Video.mp3" target="_blank">It Must Have Been Love</a></li>
+     <li><a href="Captures/Scorpions   Wind Of Change (World Events Version.mp3" target="_blank">Wind Of Change</a></li>
+     <li><a href="Captures/Secret Service   The Way You Ar.mp3" target="_blank">The Way You Ar</a></li>
+     <li><a href="Captures/Secret Service — Cry Softly (OFFICIAL VIDEO,  1982.mp3" target="_blank">Cry Softly</a></li>
+     <li><a href="Captures/The Bangles   Eternal Flame (Official Video.mp3" target="_blank">Eternal Flame</a></li>
+     <li><a href="Captures/Tracy Chapman   Baby Can I Hold You (Live.mp3" target="_blank">Baby Can I Hold You </a></li>
+     <li><a href="Captures/Whitney Houston   I Will Always Love You (Official 4K Video.mp3" target="_blank">I Will Always Love You</a></li>
+     <li><a href="Captures/Will to Power   Baby I Love Your Wa.mp3" target="_blank"> Baby I Love Your Wa</a></li>
+     <li><a href="Captures/Woman (Remastered 2010.mp3" target="_blank">Woman </a></li>
+     <li><a href=""></a></li>
+     <li><a href=""></a></li>
+    </ul>
+    <script type="text/javascript">
+        inicio()
+        function inicio() {
+            var corrente = 0;
+            var audio = $("#audio");
+            var Captures = $("#Captures");
+            var tracks = Captures.fnd("li a");
+            var len = tracks.length;
+            audio[0].play();
+            Captures.find("a").click(function(e){
+                e.preventDefault();
+                link = $(this);
+                corrent = link.parent().index();
+                run(link, audio[0]);
+            })
+
+            audio[0].addEventListener("ended", function(e){
+                corrente++;
+                if(corrente == len){
+                    corrente = 0;
+                    link.Captures.find("a")[0];
+                }else{
+                    link.Captures.find("a")[corrente];
+                }
+                run($(link), audio[0]);
+            })
+        }
+        
+        function run(Link, player) {
+            player.src = Link.attr("href");
+            par = link.parent();
+            par.addClass("active").siblings().removeClass("active");
+            player.load();
+            player.play();       
+        }
+    </script>
+</body>
+</html>
