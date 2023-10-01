@@ -51,31 +51,31 @@
         function inicio() {
             var corrente = 0;
             var audio = $("#audio");
-            var Captures = $("#Captures");
-            var tracks = Captures.fnd("li a");
-            var len = tracks.length;
+            var playlist = $("#playlist");
+            var tracks = playlist.fnd("li a");
+            var len = tracks.length - 1;
             audio[0].play();
             Captures.find("a").click(function(e){
                 e.preventDefault();
                 link = $(this);
                 corrent = link.parent().index();
                 run(link, audio[0]);
-            })
+            });
 
             audio[0].addEventListener("ended", function(e){
                 corrente++;
                 if(corrente == len){
                     corrente = 0;
-                    link.Captures.find("a")[0];
+                    link.playlist.find("a")[0];
                 }else{
-                    link.Captures.find("a")[corrente];
+                    link = playlist.find("a")[corrente];
                 }
                 run($(link), audio[0]);
-            })
+            });
         }
         
         function run(Link, player) {
-            player.src = Link.attr("href");
+            player.src = link.attr("href");
             par = link.parent();
             par.addClass("active").siblings().removeClass("active");
             player.load();
